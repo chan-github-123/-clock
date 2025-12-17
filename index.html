@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F5F5F0">
+
+  <!-- SEO Meta Tags -->
+  <title>플립 시계 & 뽀모도로 타이머 | Flip Clock & Pomodoro Timer</title>
+  <meta name="description" content="아름다운 플립 애니메이션 시계와 뽀모도로 타이머로 집중력을 높이세요. Beautiful flip clock with Pomodoro timer for better focus and productivity.">
+  <meta name="keywords" content="플립시계, 뽀모도로, 타이머, 집중력, 시간관리, flip clock, pomodoro timer, focus, productivity, time management, 온라인 시계, online clock">
+  <meta name="author" content="Chan Clock">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://chan-clock.vercel.app/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chan-clock.vercel.app/">
+  <meta property="og:title" content="플립 시계 & 뽀모도로 타이머 | Flip Clock & Pomodoro">
+  <meta property="og:description" content="아름다운 플립 애니메이션 시계와 뽀모도로 타이머로 집중력을 높이세요. Beautiful flip clock with Pomodoro timer.">
+  <meta property="og:image" content="https://chan-clock.vercel.app/icons/icon-512.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Chan Clock">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://chan-clock.vercel.app/">
+  <meta name="twitter:title" content="플립 시계 & 뽀모도로 타이머 | Flip Clock & Pomodoro">
+  <meta name="twitter:description" content="아름다운 플립 애니메이션 시계와 뽀모도로 타이머로 집중력을 높이세요.">
+  <meta name="twitter:image" content="https://chan-clock.vercel.app/icons/icon-512.png">
+
+  <!-- Additional SEO -->
+  <meta name="application-name" content="Chan Clock">
+  <meta name="apple-mobile-web-app-title" content="Chan Clock">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Chan Clock - 플립 시계 & 뽀모도로 타이머",
+    "alternateName": ["Flip Clock", "Pomodoro Timer", "플립시계", "뽀모도로 타이머"],
+    "description": "아름다운 플립 애니메이션 시계와 뽀모도로 타이머로 집중력을 높이세요. Beautiful flip clock with Pomodoro timer for better focus.",
+    "url": "https://chan-clock.vercel.app/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Flip animation clock",
+      "Pomodoro timer",
+      "12/24 hour format",
+      "Multi-language support (Korean/English)",
+      "PWA installable",
+      "Offline support"
+    ],
+    "screenshot": "https://chan-clock.vercel.app/icons/icon-512.png",
+    "softwareVersion": "1.0.0",
+    "inLanguage": ["ko", "en"]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16.png">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7403092972567121" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- 설정 버튼 -->
+  <button class="settings-btn" id="settingsBtn" aria-label="설정 열기">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+    </svg>
+  </button>
+
+  <!-- 슬라이더 컨테이너 -->
+  <div class="slider-container">
+    <div class="slider-wrapper" id="sliderWrapper">
+      <!-- 슬라이드 1: 시계 -->
+      <div class="slide" id="clockSlide">
+        <div class="slide-content">
+          <!-- 날짜 표시 -->
+          <div class="date" id="date"></div>
+
+          <!-- 플립 시계 -->
+          <div class="clock" id="clock">
+            <div class="flip-group" data-type="hour" data-ids="hour1,hour2">
+              <div class="flip-card" id="hour1">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front"><span>0</span></div>
+                  <div class="flip-card-back"><span>0</span></div>
+                </div>
+              </div>
+              <div class="flip-card" id="hour2">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front"><span>0</span></div>
+                  <div class="flip-card-back"><span>0</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="colon">:</div>
+            <div class="flip-group" data-type="minute" data-ids="min1,min2">
+              <div class="flip-card" id="min1">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front"><span>0</span></div>
+                  <div class="flip-card-back"><span>0</span></div>
+                </div>
+              </div>
+              <div class="flip-card" id="min2">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front"><span>0</span></div>
+                  <div class="flip-card-back"><span>0</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="colon">:</div>
+            <div class="flip-group" data-type="second" data-ids="sec1,sec2">
+              <div class="flip-card" id="sec1">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front"><span>0</span></div>
+                  <div class="flip-card-back"><span>0</span></div>
+                </div>
+              </div>
+              <div class="flip-card" id="sec2">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front"><span>0</span></div>
+                  <div class="flip-card-back"><span>0</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AM/PM 및 형식 토글 -->
+          <div class="time-format-row">
+            <span class="ampm" id="ampm"></span>
+            <button class="format-toggle" id="formatToggle">24h</button>
+          </div>
+
+          <!-- 콘텐츠 설명 -->
+          <div class="content-section" id="contentSection">
+            <h1 class="content-title" id="contentTitle">플립 시계 & 뽀모도로 타이머</h1>
+            <p class="content-desc" id="contentDesc">
+              아름다운 플립 애니메이션 시계와 뽀모도로 기법을 활용한 집중력 향상 타이머입니다.
+              시간을 클릭하면 크게 볼 수 있고, 좌우로 스와이프하면 뽀모도로 타이머로 전환됩니다.
+            </p>
+            <div class="feature-list" id="featureList">
+              <div class="feature-item">
+                <span class="feature-icon">⏰</span>
+                <span id="feature1">실시간 플립 애니메이션</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🍅</span>
+                <span id="feature2">뽀모도로 타이머 (25분 작업 / 5분 휴식)</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🌍</span>
+                <span id="feature3">한국어 / English 지원</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 슬라이드 2: 뽀모도로 타이머 -->
+      <div class="slide" id="pomodoroSlide">
+        <div class="slide-content">
+          <div class="pomodoro" id="pomodoroSection">
+            <div class="pomodoro-circle">
+              <svg viewBox="0 0 100 100">
+                <circle class="bg" cx="50" cy="50" r="45"/>
+                <circle class="progress" id="pomodoroProgress" cx="50" cy="50" r="45"/>
+              </svg>
+              <div class="pomodoro-time" id="pomodoroTime">25:00</div>
+              <input type="text" class="pomodoro-time-input" id="pomodoroTimeInput" value="25" maxlength="3" style="display:none;">
+            </div>
+            <div class="pomodoro-mode" id="pomodoroMode">작업</div>
+            <input type="text" class="pomodoro-mode-input" id="pomodoroModeInput" value="작업" maxlength="10" style="display:none;">
+            <div class="time-adjust">
+              <button class="adjust-btn" id="timeDown">-</button>
+              <button class="adjust-btn" id="timeUp">+</button>
+            </div>
+            <div class="pomodoro-controls">
+              <button class="btn" id="startBtn">시작</button>
+              <button class="btn" id="pauseBtn" disabled>일시정지</button>
+              <button class="btn btn-secondary" id="resetBtn">리셋</button>
+            </div>
+          </div>
+
+          <!-- 뽀모도로 설명 -->
+          <div class="content-section pomodoro-info">
+            <h2 class="content-title" id="pomodoroTitle">뽀모도로 기법이란?</h2>
+            <p class="content-desc" id="pomodoroDesc">
+              뽀모도로 기법은 25분 집중 작업 후 5분 휴식을 반복하는 시간 관리 방법입니다.
+              이탈리아어로 '토마토'를 뜻하며, 토마토 모양 타이머에서 유래했습니다.
+            </p>
+            <div class="pomodoro-steps" id="pomodoroSteps">
+              <div class="step-item"><span class="step-num">1</span><span id="step1">25분 동안 집중해서 작업하기</span></div>
+              <div class="step-item"><span class="step-num">2</span><span id="step2">5분 동안 짧은 휴식 취하기</span></div>
+              <div class="step-item"><span class="step-num">3</span><span id="step3">4회 반복 후 15-30분 긴 휴식</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 슬라이드 네비게이션 -->
+    <div class="slider-nav">
+      <button class="slider-dot active" data-slide="0" aria-label="시계"></button>
+      <button class="slider-dot" data-slide="1" aria-label="뽀모도로"></button>
+    </div>
+  </div>
+
+  <!-- 설정 모달 -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>설정</h2>
+        <button class="modal-close" id="modalClose" aria-label="닫기">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="setting-item">
+          <label>시간 형식</label>
+          <div class="radio-group">
+            <label><input type="radio" name="timeFormat" value="12h"> 12시간</label>
+            <label><input type="radio" name="timeFormat" value="24h" checked> 24시간</label>
+          </div>
+        </div>
+        <div class="setting-item">
+          <label for="workTime">작업 시간 (분)</label>
+          <input type="number" id="workTime" min="1" max="120" value="25">
+        </div>
+        <div class="setting-item">
+          <label for="breakTime">휴식 시간 (분)</label>
+          <input type="number" id="breakTime" min="1" max="60" value="5">
+        </div>
+        <div class="setting-item">
+          <label for="soundToggle">알림음</label>
+          <label class="toggle">
+            <input type="checkbox" id="soundToggle" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <label for="languageSelect">언어</label>
+          <select id="languageSelect">
+            <option value="ko">한국어</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 시계 확대 모달 -->
+  <div class="clock-zoom-overlay" id="clockZoomOverlay">
+    <div class="clock-zoom-content" id="clockZoomContent">
+      <div class="clock-zoom-card"><span id="zoomDigit1">0</span></div>
+      <div class="clock-zoom-card"><span id="zoomDigit2">0</span></div>
+    </div>
+    <div class="clock-zoom-label" id="clockZoomLabel"></div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <a href="guide.html" id="guideLink">사용 가이드</a>
+    <span class="divider">|</span>
+    <a href="privacy.html" id="privacyLink">개인정보처리방침</a>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="settings.js"></script>
+  <script src="audio.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

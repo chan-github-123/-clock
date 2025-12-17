@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Main Page -->
+  <url>
+    <loc>https://chan-clock.vercel.app/</loc>
+    <lastmod>2024-12-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://chan-clock.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chan-clock.vercel.app/"/>
+  </url>
+
+  <!-- User Guide -->
+  <url>
+    <loc>https://chan-clock.vercel.app/guide.html</loc>
+    <lastmod>2024-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://chan-clock.vercel.app/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chan-clock.vercel.app/guide.html"/>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://chan-clock.vercel.app/privacy.html</loc>
+    <lastmod>2024-12-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://chan-clock.vercel.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chan-clock.vercel.app/privacy.html"/>
+  </url>
+
+</urlset>
