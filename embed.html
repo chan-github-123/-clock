@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flip Clock Embed</title>
+  <link rel="stylesheet" href="embed.css">
+</head>
+<body>
+  <!-- 날짜 -->
+  <div class="date" id="date"></div>
+
+  <!-- 플립 시계 -->
+  <div class="clock" id="clock">
+    <div class="flip-group">
+      <div class="flip-card" id="hour1">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><span>0</span></div>
+          <div class="flip-card-back"><span>0</span></div>
+        </div>
+      </div>
+      <div class="flip-card" id="hour2">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><span>0</span></div>
+          <div class="flip-card-back"><span>0</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="colon">:</div>
+    <div class="flip-group">
+      <div class="flip-card" id="min1">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><span>0</span></div>
+          <div class="flip-card-back"><span>0</span></div>
+        </div>
+      </div>
+      <div class="flip-card" id="min2">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><span>0</span></div>
+          <div class="flip-card-back"><span>0</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="colon seconds-colon">:</div>
+    <div class="flip-group seconds-group">
+      <div class="flip-card" id="sec1">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><span>0</span></div>
+          <div class="flip-card-back"><span>0</span></div>
+        </div>
+      </div>
+      <div class="flip-card" id="sec2">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><span>0</span></div>
+          <div class="flip-card-back"><span>0</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AM/PM -->
+  <div class="ampm" id="ampm"></div>
+
+  <script src="embed.js"></script>
+</body>
+</html>
