@@ -206,22 +206,22 @@ body {
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.clock:hover {
+  transform: scale(1.02);
+}
+
+.clock:active {
+  transform: scale(0.98);
 }
 
 .flip-group {
   display: flex;
   gap: 0.25rem;
-  cursor: pointer;
-  transition: transform 0.2s;
   border-radius: 8px;
-}
-
-.flip-group:hover {
-  transform: scale(1.05);
-}
-
-.flip-group:active {
-  transform: scale(0.98);
 }
 
 .colon {
@@ -797,6 +797,41 @@ body {
 
 .clock-zoom-overlay.active .clock-zoom-label {
   color: rgba(255,255,255,0.8);
+}
+
+/* Full Time Display */
+.clock-zoom-content.full-time {
+  gap: 0;
+}
+
+.clock-zoom-full-time {
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--card-text);
+  font-variant-numeric: tabular-nums;
+  background: var(--card-bg);
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clock-zoom-content.full-time.morphing .clock-zoom-full-time {
+  font-size: 8rem;
+  padding: 1.5rem 3rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 480px) {
+  .clock-zoom-full-time {
+    font-size: 3rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .clock-zoom-content.full-time.morphing .clock-zoom-full-time {
+    font-size: 4.5rem;
+    padding: 1rem 2rem;
+  }
 }
 
 @media (max-width: 480px) {

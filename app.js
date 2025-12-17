@@ -470,16 +470,13 @@ const ClockZoom = {
     this.digit1 = document.getElementById('zoomDigit1');
     this.digit2 = document.getElementById('zoomDigit2');
     this.label = document.getElementById('clockZoomLabel');
+    this.clock = document.getElementById('clock');
 
-    // Add click handlers to flip groups
-    document.querySelectorAll('.flip-group').forEach(group => {
-      group.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const type = group.dataset.type;
-        const ids = group.dataset.ids.split(',');
-        const rect = group.getBoundingClientRect();
-        this.show(type, ids, rect);
-      });
+    // Add click handler to entire clock
+    this.clock?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const rect = this.clock.getBoundingClientRect();
+      this.showFullTime(rect);
     });
 
     // Close on overlay click
@@ -491,6 +488,66 @@ const ClockZoom = {
         this.hide();
       }
     });
+  },
+
+  showFullTime(rect) {
+    this.sourceRect = rect;
+    this.isFullTime = true;
+
+    // Update to full time display
+    this.updateFullTime();
+
+    // Hide the label for full time view
+    if (this.label) this.label.style.display = 'none';
+
+    // Position content at source element position
+    this.content.style.left = `${rect.left}px`;
+    this.content.style.top = `${rect.top}px`;
+    this.content.classList.remove('morphing');
+    this.content.classList.add('full-time');
+
+    // Show overlay
+    this.overlay?.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Trigger morphing animation after a frame
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        // Calculate center position for full time (larger width)
+        const finalWidth = window.innerWidth <= 480 ? 320 : 500;
+        const finalHeight = window.innerWidth <= 480 ? 100 : 150;
+
+        const centerX = (window.innerWidth - finalWidth) / 2;
+        const centerY = (window.innerHeight - finalHeight) / 2;
+
+        this.content.style.left = `${centerX}px`;
+        this.content.style.top = `${centerY}px`;
+        this.content.classList.add('morphing');
+      });
+    });
+
+    // Start updating full time
+    this.updateInterval = setInterval(() => {
+      this.updateFullTime();
+    }, 100);
+  },
+
+  updateFullTime() {
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+    // Handle 12/24 hour format
+    const is24h = Settings.get('timeFormat') === '24h';
+    if (!is24h) {
+      hours = hours % 12 || 12;
+    }
+
+    const timeStr = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+    // Display full time in content area
+    this.content.innerHTML = `<div class="clock-zoom-full-time">${timeStr}</div>`;
   },
 
   show(type, ids, rect) {
@@ -555,10 +612,24 @@ const ClockZoom = {
       this.content.style.left = `${this.sourceRect.left}px`;
       this.content.style.top = `${this.sourceRect.top}px`;
       this.content.classList.remove('morphing');
+      this.content.classList.remove('full-time');
     }
 
     this.overlay?.classList.remove('active');
     document.body.style.overflow = '';
+
+    // Reset full time state and restore original content
+    if (this.isFullTime) {
+      this.isFullTime = false;
+      if (this.label) this.label.style.display = '';
+      // Restore original HTML structure
+      this.content.innerHTML = `
+        <div class="clock-zoom-card"><span id="zoomDigit1">0</span></div>
+        <div class="clock-zoom-card"><span id="zoomDigit2">0</span></div>
+      `;
+      this.digit1 = document.getElementById('zoomDigit1');
+      this.digit2 = document.getElementById('zoomDigit2');
+    }
 
     // Stop updating
     if (this.updateInterval) {
