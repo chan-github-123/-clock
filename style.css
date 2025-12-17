@@ -42,12 +42,16 @@ body {
 .slide {
   width: 100vw;
   height: 100vh;
-  min-height: 100vh;
   flex-shrink: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 20px;
+  padding-bottom: 160px;
+  box-sizing: border-box;
 }
 
 .slide-content {
@@ -55,7 +59,6 @@ body {
   padding: 2rem;
   max-width: 600px;
   width: 100%;
-  max-height: 100vh;
 }
 
 /* Slider Navigation */
