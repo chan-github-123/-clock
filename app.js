@@ -575,6 +575,8 @@ const Slider = {
   currentSlide: 0,
   startX: 0,
   isDragging: false,
+  wheelAccumulator: 0,
+  wheelTimeout: null,
 
   init() {
     this.wrapper = document.getElementById('sliderWrapper');
@@ -595,6 +597,9 @@ const Slider = {
     this.wrapper?.addEventListener('mousemove', (e) => this.handleMouseMove(e));
     this.wrapper?.addEventListener('mouseup', () => this.handleMouseUp());
     this.wrapper?.addEventListener('mouseleave', () => this.handleMouseUp());
+
+    // Trackpad/wheel support
+    this.wrapper?.addEventListener('wheel', (e) => this.handleWheel(e), { passive: false });
 
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
@@ -663,6 +668,36 @@ const Slider = {
   handleMouseUp() {
     this.isDragging = false;
     if (this.wrapper) this.wrapper.style.cursor = '';
+  },
+
+  handleWheel(e) {
+    // Use horizontal scroll (deltaX) for trackpad swipe
+    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+
+    // Accumulate wheel delta
+    this.wheelAccumulator += delta;
+
+    // Clear previous timeout
+    if (this.wheelTimeout) {
+      clearTimeout(this.wheelTimeout);
+    }
+
+    // Reset accumulator after inactivity
+    this.wheelTimeout = setTimeout(() => {
+      this.wheelAccumulator = 0;
+    }, 200);
+
+    // Trigger slide change when threshold is reached
+    const threshold = 50;
+    if (Math.abs(this.wheelAccumulator) > threshold) {
+      if (this.wheelAccumulator > 0) {
+        this.next();
+      } else {
+        this.prev();
+      }
+      this.wheelAccumulator = 0;
+      e.preventDefault();
+    }
   }
 };
 
