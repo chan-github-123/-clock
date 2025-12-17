@@ -5,7 +5,7 @@
   <!-- Main Page -->
   <url>
     <loc>https://chan-clock.vercel.app/</loc>
-    <lastmod>2024-12-16</lastmod>
+    <lastmod>2025-12-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://chan-clock.vercel.app/"/>
@@ -15,7 +15,7 @@
   <!-- User Guide -->
   <url>
     <loc>https://chan-clock.vercel.app/guide.html</loc>
-    <lastmod>2024-12-16</lastmod>
+    <lastmod>2025-12-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://chan-clock.vercel.app/guide.html"/>
@@ -25,7 +25,7 @@
   <!-- Privacy Policy -->
   <url>
     <loc>https://chan-clock.vercel.app/privacy.html</loc>
-    <lastmod>2024-12-16</lastmod>
+    <lastmod>2025-12-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://chan-clock.vercel.app/privacy.html"/>
