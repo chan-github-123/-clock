@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F5F5F0">
+
+  <!-- SEO Meta Tags -->
+  <title>소개 - 플립 시계 & 뽀모도로 타이머 | About Us</title>
+  <meta name="description" content="Chan Clock 소개 - 아름다운 플립 시계와 뽀모도로 타이머로 생산성을 높이세요. About Chan Clock - Beautiful flip clock and Pomodoro timer for productivity.">
+  <meta name="keywords" content="플립시계 소개, 뽀모도로 타이머 소개, Chan Clock, about flip clock, about pomodoro timer">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://chan-clock.vercel.app/about.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chan-clock.vercel.app/about.html">
+  <meta property="og:title" content="소개 - 플립 시계 & 뽀모도로 타이머">
+  <meta property="og:description" content="Chan Clock 소개 - 아름다운 플립 시계와 뽀모도로 타이머">
+  <meta property="og:image" content="https://chan-clock.vercel.app/icons/icon-512.png">
+  <meta property="og:site_name" content="Chan Clock">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="소개 - Chan Clock">
+  <meta name="twitter:description" content="Chan Clock 소개 - 아름다운 플립 시계와 뽀모도로 타이머">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Chan Clock",
+    "description": "아름다운 플립 시계와 뽀모도로 타이머 웹 애플리케이션",
+    "url": "https://chan-clock.vercel.app",
+    "logo": "https://chan-clock.vercel.app/icons/icon-512.png",
+    "foundingDate": "2024",
+    "sameAs": []
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7403092972567121" crossorigin="anonymous"></script>
+  <style>
+    .page-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+    .page-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .back-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-light);
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: background 0.2s;
+    }
+    .back-btn:hover {
+      background: rgba(0,0,0,0.05);
+    }
+    .page-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .content {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .content h2 {
+      font-size: 1.2rem;
+      color: var(--text);
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--pomodoro-red);
+    }
+    .content h2:first-child {
+      margin-top: 0;
+    }
+    .content p, .content li {
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 0.75rem;
+    }
+    .content ul {
+      padding-left: 1.5rem;
+    }
+    .highlight-box {
+      background: linear-gradient(135deg, #FFF5F5 0%, #FFF0F0 100%);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    .highlight-box .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .highlight-box h3 {
+      color: var(--pomodoro-red);
+      margin-bottom: 0.5rem;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .feature-card {
+      background: var(--bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .feature-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .feature-card h4 {
+      margin: 0.5rem 0;
+      color: var(--text);
+    }
+    .feature-card p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    .team-section {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .team-section .avatar {
+      width: 80px;
+      height: 80px;
+      background: var(--pomodoro-red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 2rem;
+      color: white;
+    }
+    .lang-toggle {
+      margin-left: auto;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <div class="page-header">
+      <button class="back-btn" onclick="location.href='index.html'" aria-label="뒤로가기">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <h1 class="page-title" id="pageTitle">소개</h1>
+      <button class="lang-toggle" onclick="toggleLang()">English</button>
+    </div>
+
+    <div class="content">
+      <!-- Korean -->
+      <div class="lang-content active" id="ko">
+        <h2>Chan Clock 소개</h2>
+
+        <div class="highlight-box">
+          <div class="icon">⏰</div>
+          <h3>시간을 아름답게, 집중을 효과적으로</h3>
+          <p>Chan Clock은 아름다운 플립 애니메이션 시계와 뽀모도로 타이머를 제공하는 무료 웹 애플리케이션입니다.</p>
+        </div>
+
+        <h2>우리의 미션</h2>
+        <p>현대인들은 끊임없는 디지털 방해 속에서 집중하기 어려워하고 있습니다. Chan Clock은 단순하면서도 아름다운 도구를 통해 사용자들이 시간을 효율적으로 관리하고, 더 나은 집중력을 발휘할 수 있도록 돕고자 합니다.</p>
+
+        <h2>주요 기능</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="icon">🎨</div>
+            <h4>아름다운 디자인</h4>
+            <p>클래식한 플립 애니메이션으로 시간을 우아하게 표시</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🍅</div>
+            <h4>뽀모도로 타이머</h4>
+            <p>과학적으로 검증된 시간 관리 기법 적용</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">📱</div>
+            <h4>PWA 지원</h4>
+            <p>앱처럼 설치하여 오프라인에서도 사용</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🌍</div>
+            <h4>다국어 지원</h4>
+            <p>한국어와 영어를 지원</p>
+          </div>
+        </div>
+
+        <h2>왜 Chan Clock인가?</h2>
+        <ul>
+          <li><strong>무료 사용</strong> - 모든 기능을 무료로 제공합니다</li>
+          <li><strong>광고 최소화</strong> - 사용 경험을 방해하지 않는 최소한의 광고</li>
+          <li><strong>개인정보 보호</strong> - 불필요한 개인정보를 수집하지 않습니다</li>
+          <li><strong>지속적인 업데이트</strong> - 사용자 피드백을 반영하여 계속 발전합니다</li>
+        </ul>
+
+        <h2>개발팀</h2>
+        <div class="team-section">
+          <div class="avatar">C</div>
+          <h4>Chan</h4>
+          <p>더 나은 생산성 도구를 만들기 위해 노력하는 개발자입니다.<br>사용자 경험을 최우선으로 생각합니다.</p>
+        </div>
+      </div>
+
+      <!-- English -->
+      <div class="lang-content" id="en">
+        <h2>About Chan Clock</h2>
+
+        <div class="highlight-box">
+          <div class="icon">⏰</div>
+          <h3>Beautiful Time, Effective Focus</h3>
+          <p>Chan Clock is a free web application providing beautiful flip animation clock and Pomodoro timer.</p>
+        </div>
+
+        <h2>Our Mission</h2>
+        <p>Modern people struggle to focus amid constant digital distractions. Chan Clock aims to help users manage their time efficiently and achieve better focus through simple yet beautiful tools.</p>
+
+        <h2>Key Features</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="icon">🎨</div>
+            <h4>Beautiful Design</h4>
+            <p>Elegant time display with classic flip animations</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🍅</div>
+            <h4>Pomodoro Timer</h4>
+            <p>Scientifically proven time management technique</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">📱</div>
+            <h4>PWA Support</h4>
+            <p>Install as an app and use offline</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🌍</div>
+            <h4>Multi-language</h4>
+            <p>Supports Korean and English</p>
+          </div>
+        </div>
+
+        <h2>Why Chan Clock?</h2>
+        <ul>
+          <li><strong>Free to Use</strong> - All features are provided for free</li>
+          <li><strong>Minimal Ads</strong> - Non-intrusive advertising experience</li>
+          <li><strong>Privacy First</strong> - We don't collect unnecessary personal data</li>
+          <li><strong>Continuous Updates</strong> - Constantly improving based on user feedback</li>
+        </ul>
+
+        <h2>Development Team</h2>
+        <div class="team-section">
+          <div class="avatar">C</div>
+          <h4>Chan</h4>
+          <p>A developer striving to create better productivity tools.<br>User experience is the top priority.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleLang() {
+      const ko = document.getElementById('ko');
+      const en = document.getElementById('en');
+      const btn = document.querySelector('.lang-toggle');
+      const title = document.getElementById('pageTitle');
+
+      if (ko.classList.contains('active')) {
+        ko.classList.remove('active');
+        en.classList.add('active');
+        btn.textContent = '한국어';
+        title.textContent = 'About';
+      } else {
+        en.classList.remove('active');
+        ko.classList.add('active');
+        btn.textContent = 'English';
+        title.textContent = '소개';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -26,7 +26,9 @@ const i18n = {
       language: '언어',
       close: '닫기',
       openSettings: '설정 열기',
+      about: '소개',
       guide: '사용 가이드',
+      contact: '문의하기',
       privacy: '개인정보처리방침',
 
       // Content
@@ -67,7 +69,9 @@ const i18n = {
       language: 'Language',
       close: 'Close',
       openSettings: 'Open Settings',
+      about: 'About',
       guide: 'User Guide',
+      contact: 'Contact',
       privacy: 'Privacy Policy',
 
       // Content
@@ -178,9 +182,13 @@ const i18n = {
     if (resetBtn) resetBtn.textContent = this.t('reset');
 
     // Footer links
+    const aboutLink = document.getElementById('aboutLink');
     const guideLink = document.getElementById('guideLink');
+    const contactLink = document.getElementById('contactLink');
     const privacyLink = document.getElementById('privacyLink');
+    if (aboutLink) aboutLink.textContent = this.t('about');
     if (guideLink) guideLink.textContent = this.t('guide');
+    if (contactLink) contactLink.textContent = this.t('contact');
     if (privacyLink) privacyLink.textContent = this.t('privacy');
 
     // Content sections

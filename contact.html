@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F5F5F0">
+
+  <!-- SEO Meta Tags -->
+  <title>문의하기 - 플립 시계 & 뽀모도로 타이머 | Contact Us</title>
+  <meta name="description" content="Chan Clock에 문의하세요. 플립 시계와 뽀모도로 타이머에 대한 질문, 피드백, 제안을 환영합니다. Contact Chan Clock for questions, feedback, and suggestions.">
+  <meta name="keywords" content="문의하기, 피드백, 연락처, contact us, feedback, support">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://chan-clock.vercel.app/contact.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chan-clock.vercel.app/contact.html">
+  <meta property="og:title" content="문의하기 - Chan Clock">
+  <meta property="og:description" content="Chan Clock에 문의하세요. 질문, 피드백, 제안을 환영합니다.">
+  <meta property="og:image" content="https://chan-clock.vercel.app/icons/icon-512.png">
+  <meta property="og:site_name" content="Chan Clock">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="문의하기 - Chan Clock">
+  <meta name="twitter:description" content="Chan Clock에 문의하세요.">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Chan Clock 문의하기",
+    "description": "Chan Clock에 대한 문의 페이지",
+    "url": "https://chan-clock.vercel.app/contact.html",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Chan Clock",
+      "url": "https://chan-clock.vercel.app"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7403092972567121" crossorigin="anonymous"></script>
+  <style>
+    .page-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+    .page-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .back-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-light);
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: background 0.2s;
+    }
+    .back-btn:hover {
+      background: rgba(0,0,0,0.05);
+    }
+    .page-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .content {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .content h2 {
+      font-size: 1.2rem;
+      color: var(--text);
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--pomodoro-red);
+    }
+    .content h2:first-child {
+      margin-top: 0;
+    }
+    .content p, .content li {
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 0.75rem;
+    }
+    .contact-intro {
+      text-align: center;
+      padding: 2rem 0;
+    }
+    .contact-intro .icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .contact-card {
+      background: var(--bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .contact-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    .contact-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .contact-card h3 {
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .contact-card p {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .contact-card a {
+      display: inline-block;
+      background: var(--pomodoro-red);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .contact-card a:hover {
+      opacity: 0.9;
+    }
+    .faq-section {
+      margin-top: 2rem;
+    }
+    .faq-item {
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .faq-item h4 {
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .faq-item h4::before {
+      content: 'Q.';
+      color: var(--pomodoro-red);
+      font-weight: bold;
+    }
+    .faq-item p {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+    .response-time {
+      background: linear-gradient(135deg, #FFF5F5 0%, #FFF0F0 100%);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .response-time .icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .lang-toggle {
+      margin-left: auto;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <div class="page-header">
+      <button class="back-btn" onclick="location.href='index.html'" aria-label="뒤로가기">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <h1 class="page-title" id="pageTitle">문의하기</h1>
+      <button class="lang-toggle" onclick="toggleLang()">English</button>
+    </div>
+
+    <div class="content">
+      <!-- Korean -->
+      <div class="lang-content active" id="ko">
+        <div class="contact-intro">
+          <div class="icon">💬</div>
+          <h2 style="border: none; margin: 0; padding: 0;">무엇을 도와드릴까요?</h2>
+          <p>Chan Clock에 대한 질문, 피드백, 제안을 환영합니다.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="icon">📧</div>
+            <h3>이메일 문의</h3>
+            <p>일반적인 문의사항이나 피드백을 보내주세요.</p>
+            <a href="mailto:chan.clock.app@gmail.com">이메일 보내기</a>
+          </div>
+          <div class="contact-card">
+            <div class="icon">🐛</div>
+            <h3>버그 리포트</h3>
+            <p>오류나 문제를 발견하셨나요?</p>
+            <a href="mailto:chan.clock.app@gmail.com?subject=[버그리포트] ">버그 신고하기</a>
+          </div>
+          <div class="contact-card">
+            <div class="icon">💡</div>
+            <h3>기능 제안</h3>
+            <p>새로운 기능 아이디어가 있으신가요?</p>
+            <a href="mailto:chan.clock.app@gmail.com?subject=[기능제안] ">제안하기</a>
+          </div>
+        </div>
+
+        <h2>자주 묻는 질문</h2>
+        <div class="faq-section">
+          <div class="faq-item">
+            <h4>앱을 오프라인에서 사용할 수 있나요?</h4>
+            <p>네! PWA로 설치하시면 인터넷 연결 없이도 사용하실 수 있습니다. 브라우저 주소창의 설치 버튼을 클릭하세요.</p>
+          </div>
+          <div class="faq-item">
+            <h4>알림음이 안 들려요.</h4>
+            <p>설정에서 알림음이 켜져 있는지 확인해주세요. 또한 브라우저나 기기의 음소거 설정도 확인해주세요.</p>
+          </div>
+          <div class="faq-item">
+            <h4>데이터가 저장되나요?</h4>
+            <p>모든 설정은 브라우저 로컬 스토리지에 저장됩니다. 서버로 전송되는 개인정보는 없습니다.</p>
+          </div>
+          <div class="faq-item">
+            <h4>다른 언어도 지원하나요?</h4>
+            <p>현재 한국어와 영어를 지원하고 있습니다. 추가 언어 지원이 필요하시면 제안해주세요!</p>
+          </div>
+        </div>
+
+        <div class="response-time">
+          <div class="icon">⏱️</div>
+          <h3>응답 시간</h3>
+          <p>보통 1-2일 내에 답변드립니다.<br>주말이나 공휴일에는 다소 지연될 수 있습니다.</p>
+        </div>
+      </div>
+
+      <!-- English -->
+      <div class="lang-content" id="en">
+        <div class="contact-intro">
+          <div class="icon">💬</div>
+          <h2 style="border: none; margin: 0; padding: 0;">How can we help?</h2>
+          <p>We welcome your questions, feedback, and suggestions about Chan Clock.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="icon">📧</div>
+            <h3>Email Us</h3>
+            <p>Send us your general inquiries or feedback.</p>
+            <a href="mailto:chan.clock.app@gmail.com">Send Email</a>
+          </div>
+          <div class="contact-card">
+            <div class="icon">🐛</div>
+            <h3>Bug Report</h3>
+            <p>Found an error or issue?</p>
+            <a href="mailto:chan.clock.app@gmail.com?subject=[Bug Report] ">Report Bug</a>
+          </div>
+          <div class="contact-card">
+            <div class="icon">💡</div>
+            <h3>Feature Request</h3>
+            <p>Have a new feature idea?</p>
+            <a href="mailto:chan.clock.app@gmail.com?subject=[Feature Request] ">Make Suggestion</a>
+          </div>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-section">
+          <div class="faq-item">
+            <h4>Can I use the app offline?</h4>
+            <p>Yes! Install it as a PWA and you can use it without internet connection. Click the install button in your browser's address bar.</p>
+          </div>
+          <div class="faq-item">
+            <h4>I can't hear the alarm sound.</h4>
+            <p>Please check if the sound is enabled in settings. Also check your browser or device mute settings.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Is my data saved?</h4>
+            <p>All settings are saved in browser local storage. No personal information is sent to any server.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Do you support other languages?</h4>
+            <p>Currently we support Korean and English. If you need additional language support, please suggest it!</p>
+          </div>
+        </div>
+
+        <div class="response-time">
+          <div class="icon">⏱️</div>
+          <h3>Response Time</h3>
+          <p>We usually respond within 1-2 days.<br>Responses may be delayed on weekends or holidays.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleLang() {
+      const ko = document.getElementById('ko');
+      const en = document.getElementById('en');
+      const btn = document.querySelector('.lang-toggle');
+      const title = document.getElementById('pageTitle');
+
+      if (ko.classList.contains('active')) {
+        ko.classList.remove('active');
+        en.classList.add('active');
+        btn.textContent = '한국어';
+        title.textContent = 'Contact';
+      } else {
+        en.classList.remove('active');
+        ko.classList.add('active');
+        btn.textContent = 'English';
+        title.textContent = '문의하기';
+      }
+    }
+  </script>
+</body>
+</html>

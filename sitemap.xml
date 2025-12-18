@@ -12,6 +12,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chan-clock.vercel.app/"/>
   </url>
 
+  <!-- About Page -->
+  <url>
+    <loc>https://chan-clock.vercel.app/about.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://chan-clock.vercel.app/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chan-clock.vercel.app/about.html"/>
+  </url>
+
   <!-- User Guide -->
   <url>
     <loc>https://chan-clock.vercel.app/guide.html</loc>
@@ -20,6 +30,16 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://chan-clock.vercel.app/guide.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chan-clock.vercel.app/guide.html"/>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://chan-clock.vercel.app/contact.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://chan-clock.vercel.app/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chan-clock.vercel.app/contact.html"/>
   </url>
 
   <!-- Privacy Policy -->
